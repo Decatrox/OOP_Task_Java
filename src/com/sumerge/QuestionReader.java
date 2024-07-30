@@ -1,3 +1,5 @@
+package com.sumerge;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -8,13 +10,13 @@ import java.util.stream.Stream;
 
 public class QuestionReader {
 
-    public List<Question> readFile(String filePath) {
+    public List<Question> read_file(String filePath) {
 
         List<Question> list = new ArrayList<>();
 //        String fileName = "c://lines.txt";
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
             list = stream
-                    .map(QuestionReader::createQuestionFromLine)
+                    .map(QuestionReader::create_question_from_line)
                     .collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
@@ -24,7 +26,7 @@ public class QuestionReader {
 
     }
 
-    public static Question createQuestionFromLine(String line) {
+    public static Question create_question_from_line(String line) {
         List<String> parts = Stream.of(line.split(";"))
                 .collect(Collectors.toList());
 

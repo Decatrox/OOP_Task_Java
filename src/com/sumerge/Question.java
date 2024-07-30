@@ -1,4 +1,4 @@
-//change choices to be int or char
+package com.sumerge;//change choices to be int or char
 
 public class Question {
     private String question;

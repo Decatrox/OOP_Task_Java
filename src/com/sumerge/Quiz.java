@@ -1,3 +1,5 @@
+package com.sumerge;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 
-//Quiz: Represents a collection of questions. Should have methods to
+//com.sumerge.Quiz: Represents a collection of questions. Should have methods to
 // add questions, display questions, and calculate the score based on user responses.
 public class Quiz {
     private List<Question> questions = new ArrayList<>();
@@ -36,11 +38,7 @@ public class Quiz {
 
     public void generate_quiz (String question_bank_path) {
         QuestionReader qr = new QuestionReader();
-        List<Question> questions_result = qr.readFile(question_bank_path);
-//        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("questions.txt");
-//        List<Question> questions_result = qr.readFile(inputStream);
-
-//        System.out.println(questions_result.toString());
+        List<Question> questions_result = qr.read_file(question_bank_path);
         questions = rands.stream()
                 .map(questions_result::get)
                 .collect(Collectors.toList());
@@ -55,6 +53,7 @@ public class Quiz {
         output.close();
 
     }
+
     //must refactor this later
 //    public void display_next_question() {
     public int display_next_question() {
@@ -85,7 +84,7 @@ public class Quiz {
 //        score++;
 //    }
 
-//    private void update_score (Question q) {
+//    private void update_score (com.sumerge.Question q) {
 //        try {
 //            String nl = sc.nextLine();
 //            if (nl.equals("s")){

@@ -1,4 +1,4 @@
-//• User: Represents a user taking the quiz. Should have attributes for the user's name and methods to record their answers and track their progress.
+package com.sumerge;//• com.sumerge.User: Represents a user taking the quiz. Should have attributes for the user's name and methods to record their answers and track their progress.
 
 //if there is time add a recap after the quiz displaying mistakes.
 public class User {
